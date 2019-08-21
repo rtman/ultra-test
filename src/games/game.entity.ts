@@ -11,12 +11,12 @@ export class Game {
   @Column()
   price: number;
 
-  @ManyToOne(publisher => Publisher, publisher => publisher)
-  publisher: Publisher;
+  // @ManyToOne(publisher => Publisher, publisher => publisher)
+  // publisher: Publisher;
 
   @Column('simple-array')
   tags: string[];
 
   @Column()
-  releaseDate: date;
+  releaseDate: Date;
 }
