@@ -22,7 +22,6 @@ export class PublishersController {
     @Body() publisherData: Publisher,
   ): Promise<any> {
     publisherData.id = Number(id);
-    console.log('UPDATE - ', publisherData.id, publisherData);
     return this.publishersService.update(publisherData);
   }
 
