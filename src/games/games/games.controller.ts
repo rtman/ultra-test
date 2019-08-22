@@ -13,25 +13,27 @@ export class GamesController {
 
   @Get(':id/publisher')
   async publisher(@Param('id') id): Promise<any> {
-    console.log('PUBLISHER - id - ', id);
     return this.gamesService.getPublisher(id);
   }
 
   @Post('create')
   async create(@Body() gameData: Game): Promise<any> {
-    console.log('CREATE - GameData - ', gameData);
     return this.gamesService.create(gameData);
   }
 
   @Put(':id/update')
   async update(@Param('id') id, @Body() gameData: Game): Promise<any> {
     gameData.id = Number(id);
-    console.log('UPDATE - ', gameData.id, gameData);
     return this.gamesService.update(gameData);
   }
 
   @Delete(':id/delete')
   async delete(@Param('id') id): Promise<any> {
     return this.gamesService.delete(id);
+  }
+
+  @Get('recentSale')
+  async recentSale(): Promise<any> {
+    return this.gamesService.recentSale();
   }
 }

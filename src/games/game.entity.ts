@@ -13,11 +13,11 @@ export class Game {
   price: number;
 
   @Column()
-  publisher: number
+  publisher: number;
 
   @Column('simple-array')
   tags: string[];
 
   @Column()
-  releaseDate: Date;
+  releaseDate: number;
 }

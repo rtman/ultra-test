@@ -12,7 +12,6 @@ export class PublishersService {
   ) {}
 
   async find(id): Promise<Publisher> {
-    console.log('PUBLISHER - id', id);
     return await this.publisherRepository.findOneOrFail(id);
   }
 
