@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Publisher } from '../publishers/publisher.entity';
 
 @Entity()
 export class Game {
@@ -11,8 +12,8 @@ export class Game {
   @Column()
   price: number;
 
-  // @ManyToOne(publisher => Publisher, publisher => publisher)
-  // publisher: Publisher;
+  @Column()
+  publisher: number
 
   @Column('simple-array')
   tags: string[];

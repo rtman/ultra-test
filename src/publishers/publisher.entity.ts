@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Game } from '../games/game.entity';
 
 @Entity()
 export class Publisher {
@@ -13,7 +14,4 @@ export class Publisher {
 
   @Column()
   phone: string;
-
-  // @OneToMany(game => Game, game => game.publisher)
-  // game: Game;
 }

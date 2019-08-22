@@ -10,6 +10,12 @@ export class PublishersService {
     @InjectRepository(Publisher)
     private publisherRepository: Repository<Publisher>,
   ) {}
+
+  async find(id): Promise<Publisher> {
+    console.log('PUBLISHER - id', id);
+    return await this.publisherRepository.findOneOrFail(id);
+  }
+
   async findAll(): Promise<Publisher[]> {
     return await this.publisherRepository.find();
   }

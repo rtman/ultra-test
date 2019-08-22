@@ -10,6 +10,13 @@ export class GamesController {
   index(): Promise<Game[]> {
     return this.gamesService.findAll();
   }
+
+  @Get(':id/publisher')
+  async publisher(@Param('id') id): Promise<any> {
+    console.log('PUBLISHER - id - ', id);
+    return this.gamesService.getPublisher(id);
+  }
+
   @Post('create')
   async create(@Body() gameData: Game): Promise<any> {
     console.log('CREATE - GameData - ', gameData);
