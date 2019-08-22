@@ -12,7 +12,6 @@ export class PublishersController {
   }
   @Post('create')
   async create(@Body() publisherData: Publisher): Promise<any> {
-    console.log('CREATE - PublisherData - ', publisherData);
     return this.publishersService.create(publisherData);
   }
 
